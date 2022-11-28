@@ -16,7 +16,11 @@ class Signup
         void displaySignupStatus();
         void setUsername();
         void setPassword();
-        void signupPrompt();
+        std::string getUsername();
+        std::string getPassword();
+        void createAccount(Signup &newuser);
+       
+        
 };
 
 

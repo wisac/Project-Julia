@@ -1,10 +1,8 @@
 #include <iostream>
 #include "signup.h"
 
-void Signup::signupPrompt()
-{
-    std::cout << "\nPlease enter a username and password to register\n";
-}
+
+    
 
 //initialising default username and password for new users 
 Signup::Signup():username {"N/A"}, password {"N/A"}
@@ -32,8 +30,10 @@ void Signup::setUsername()
 {
     std::string newName;
 
-    std::cout << "Username:  ";   
-    getline(std::cin, newName);
+    std::cout << "Username:  "; 
+    std::cin.ignore();  
+    getline(std::cin,newName);
+    
 
     char unacceptableChar = ' ';
     bool flag = true;
@@ -95,10 +95,12 @@ void Signup::setPassword()
             std::cout<< "Password must be at least 6 characters long. Please enter a valid password.Press # to exit.\n\n";
         }
         std::cout << "Password:  ";
+        std::cin.ignore();
         getline(std::cin,newPassword);
 
         flag = true;
-    }   
+    }  
+
     while(newPassword.size() < minLengthOfPass && newPassword != "#");
 
     //assigning password after it pass all requirements
@@ -123,3 +125,30 @@ void Signup::displaySignupStatus()
         std::cout << "Failed to create an account.\n";
     }
 }
+
+
+
+void Signup::createAccount(Signup &newuser)
+{
+    std::cout << "\nPlease enter a username and password to register\n";
+    
+    newuser.setUsername();
+
+    if(newuser.usernameStatus())
+    {   
+        newuser.setPassword();
+    }
+    newuser.displaySignupStatus();
+
+}
+
+std::string Signup::getUsername()
+{
+    return username;
+}
+std::string Signup::getPassword()
+{
+    return password;
+}
+    
+

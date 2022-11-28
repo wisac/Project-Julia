@@ -13,6 +13,8 @@ class Intro
     public:
         Intro();
         void displayInfo();
+        void printLines();
+
 };
 
 

@@ -2,6 +2,8 @@
 #include <string>
 #include "signup.h"
 #include "welcome.h"
+#include "menu.h"
+#include "saveLogins.h"
 
 
 
@@ -10,13 +12,21 @@ int main()
     Intro homepage;
     homepage.displayInfo();
     
-    Signup newuser;
-    newuser.signupPrompt();
-    newuser.setUsername();
-    if(newuser.usernameStatus())
-    {   
-        newuser.setPassword();
-    }
-    newuser.displaySignupStatus();
+    char accountOption = menu();
     
+
+    Signup newuser;
+
+    if(accountOption == 'A')
+    { 
+        newuser.createAccount(newuser);
+    }
+
+
+    saveLogins(newuser.getUsername(),newuser.getPassword());
+
+    
+
+    //sandragyamfi690@gmail.com
+
 }
