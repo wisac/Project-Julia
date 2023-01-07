@@ -3,7 +3,7 @@
 #include "signup.h"
 #include "welcome.h"
 #include "menu.h"
-#include "saveLogins.h"
+//#include "save_logins_cred.h"
 
 
 
@@ -23,10 +23,12 @@ int main()
     }
 
 
-    saveLogins(newuser.getUsername(),newuser.getPassword());
+    
+    saveSignupLogins(newuser);
 
     
 
     //sandragyamfi690@gmail.com
+    return 0;
 
 }
