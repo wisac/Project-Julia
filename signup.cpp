@@ -1,5 +1,6 @@
 #include <iostream>
 #include "signup.h"
+#include <istream>
 
 
     
@@ -62,6 +63,7 @@ void Signup::setUsername()
         {   
             std::cout << "Username cannot contain SPACES.\nPlease enter a valid username or press # to exit.\n\nUsername:  ";
 
+            std::cin.ignore();
             getline(std::cin, newName);
 
             if(newName == "#")
@@ -95,8 +97,8 @@ void Signup::setPassword()
             std::cout<< "Password must be at least 6 characters long. Please enter a valid password.Press # to exit.\n\n";
         }
         std::cout << "Password:  ";
-        std::cin.ignore();
-        getline(std::cin,newPassword);
+        //std::cin.ignore();
+        getline(std::cin >> std::ws,newPassword);
 
         flag = true;
     }  

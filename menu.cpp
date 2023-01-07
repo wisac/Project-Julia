@@ -27,8 +27,8 @@
 char menu()
 {
     std::cout << "Please select an option\n";
-    std::cout << "A = Signup (Newuser (Signup)\n";
-    std::cout << "B = Signin (Already have an account)\n";
+    std::cout << "A = Sign up (Newuser)\n";
+    std::cout << "B = Sign in (Already have an account)\n";
     
     char option;
     std::cin >> option;
