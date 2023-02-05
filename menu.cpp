@@ -25,10 +25,12 @@
 
 
 char menu()
-{
+{   
+    std::cout << "\n==================== HOME =======================\n";
     std::cout << "Please select an option\n";
     std::cout << "A = Sign up (Newuser)\n";
     std::cout << "B = Sign in (Already have an account)\n";
+    std::cout <<"\nYour selection: ";
     
     char option;
     std::cin >> option;

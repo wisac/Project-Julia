@@ -16,13 +16,15 @@ void saveSignupLogins(const Signup &source)
 
         std::cout << "Username and passwords successfully saved\n";
         outputFile.close();
+        
     }
 
     else
     {
         std::cout << "Error, failed to save username and password\n";
     }
-
+    std::cout << "---------------------------------------\n";
+    std::cout << "---------------------------------------\n";
     
 
 }

@@ -131,7 +131,8 @@ void Signup::displaySignupStatus()
 
 
 void Signup::createAccount(Signup &newuser)
-{
+{   
+    std::cout << "\n================= CREATE ACCOUNT ================";
     std::cout << "\nPlease enter a username and password to register\n";
     
     newuser.setUsername();
