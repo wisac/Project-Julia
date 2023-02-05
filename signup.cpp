@@ -32,34 +32,56 @@ void Signup::setUsername()
     std::string newName;
 
     std::cout << "Username:  "; 
-    std::cin.ignore();  
-    getline(std::cin,newName);
+    
+    //std::cin.ignore();  
+    getline(std::cin >> std::ws, newName);
     
 
-    char unacceptableChar = ' ';
+    //char unacceptableChar = ' ';
     bool flag = true;
     
 
     while(flag == true)
     {   
-        int spaceCount = 0;
+        size_t unacceptedChar = 0;
 
-        for(auto i: newName)
-        {
-            if(i == unacceptableChar )
+        for (size_t i = 0; i < newName.length(); i++)
+	    {
+		    if((newName[i] >= 65 && newName[i] <= 90) || (newName[i] >= 97 && newName[i] <= 122)
+		    || (newName[i] >= 48 && newName[i] <=57) || (newName[i] == 46 || newName[i] == 95))
             {   
                 
-                spaceCount += 1;
+                continue;
                 
             } 
+
+            else
+            {   
+                std::cout << "Username cannot contain SPACES.\nPlease enter a valid username OR press # to exit.\n\nUsername:  ";
+
+                //std::cin.ignore();
+                getline(std::cin >> std::ws,newName);
+                //getline(std::cin, newName);
+
+                if(newName == "#")
+                {   
+                    flag = false;
+                    break;
+                }
+
+                unacceptedChar++;
+                break;
+            }
+            
         }
 
-        if(spaceCount == 0)
+
+        if(unacceptedChar == 0)
         {
             flag = false;
         }
 
-        else
+        /*else
         {   
             std::cout << "Username cannot contain SPACES.\nPlease enter a valid username OR press # to exit.\n\nUsername:  ";
 
@@ -70,13 +92,14 @@ void Signup::setUsername()
             {
                 break;
             }
-        }
+        }*/
     }
-    if(newName == "")
-    {   
-        std::cout << "Please enter a username or Press # to exit\n";
-        this->setUsername();
-    }
+
+    // if(newName == "")
+    // {   
+    //     std::cout << "Please enter a username or Press # to exit\n";
+    //     this->setUsername();
+    // }
 
     //assigning username after it meets requirements
     if(newName != "#")
