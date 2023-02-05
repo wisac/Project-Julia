@@ -23,8 +23,8 @@ void saveSignupLogins(const Signup &source)
     {
         std::cout << "Error, failed to save username and password\n";
     }
-    std::cout << "---------------------------------------\n";
-    std::cout << "---------------------------------------\n";
+    std::cout << "=================================================\n";
+    //std::cout << "---------------------------------------\n";
     
 
 }

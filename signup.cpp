@@ -61,7 +61,7 @@ void Signup::setUsername()
 
         else
         {   
-            std::cout << "Username cannot contain SPACES.\nPlease enter a valid username or press # to exit.\n\nUsername:  ";
+            std::cout << "Username cannot contain SPACES.\nPlease enter a valid username OR press # to exit.\n\nUsername:  ";
 
             std::cin.ignore();
             getline(std::cin, newName);
@@ -71,6 +71,11 @@ void Signup::setUsername()
                 break;
             }
         }
+    }
+    if(newName == "")
+    {   
+        std::cout << "Please enter a username or Press # to exit\n";
+        this->setUsername();
     }
 
     //assigning username after it meets requirements
@@ -94,7 +99,7 @@ void Signup::setPassword()
     {   
         if(flag)
         {
-            std::cout<< "Password must be at least 6 characters long. Please enter a valid password.Press # to exit.\n\n";
+            std::cout<< "Password must be at least 6 characters long. Please enter a valid password  OR press # to exit.\n\n";
         }
         std::cout << "Password:  ";
         //std::cin.ignore();
