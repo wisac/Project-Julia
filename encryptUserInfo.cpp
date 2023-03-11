@@ -4,19 +4,23 @@ EncryptUserInfo::EncryptUserInfo() : EncryptUserInfo("N/A")
 {
 }
 
-EncryptUserInfo::EncryptUserInfo(const std::string username) : username(username), hashedValue{}
+EncryptUserInfo::EncryptUserInfo(const std::string username) :username(username), hashedValue{}
 {
 }
 
-void EncryptUserInfo::Hasher(const std::string password)
+size_t EncryptUserInfo::hashWord(const std::string word)
 {
 
-    size_t hashcode = std::hash<std::string>{}(password);
-    hashedValue = hashcode;
+    size_t hashcode = std::hash<std::string>{}(word);
+
+    return hashcode;
+    
     
 }
 
-size_t EncryptUserInfo::getHashValue()
+
+void EncryptUserInfo::storeHashValue(size_t hashedValue)
 {
-    return this->hashedValue;
+    this->hashedValue = hashedValue;
 }
+

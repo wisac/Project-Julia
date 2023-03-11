@@ -1,6 +1,7 @@
 #ifndef _ENCRIPTUSERINFO_H_
 #define _ENCRIPTUSERINFO_H_
 #include <string>
+
 class EncryptUserInfo
 {
 private:
@@ -10,8 +11,11 @@ private:
 public:
     EncryptUserInfo();
     EncryptUserInfo(const std::string username);
-    void Hasher(const std::string password);
-    size_t getHashValue();
+    size_t hashWord(const std::string word);
+    void storeHashValue(size_t hashedValue);
+    friend  class Database;
+    
+    
 };
 
 #endif
