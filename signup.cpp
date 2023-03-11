@@ -139,7 +139,6 @@ void Signup::displaySignupStatus()
     }
 }
 
-
 void Signup::createAccount(Signup &newuser)
 {
     std::cout << "\n================= CREATE ACCOUNT ================";
