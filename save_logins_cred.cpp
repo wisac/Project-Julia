@@ -17,7 +17,6 @@ void saveSignupLogins(const Signup &source)
             outputFile << "password: " << source.password << "\n";
             std::cout << source.password << std::endl;
             std::cout << "Username and passwords successfully saved\n";
-            
         }
 
         else
@@ -29,7 +28,7 @@ void saveSignupLogins(const Signup &source)
 
     else
     {
-        std::cout << "Error, the file "<< fileName << " could not be found. Failed to save username and password\n";
+        std::cout << "Error, the file " << fileName << " could not be found. Failed to save username and password\n";
     }
     std::cout << "=================================================\n";
     // std::cout << "---------------------------------------\n";
